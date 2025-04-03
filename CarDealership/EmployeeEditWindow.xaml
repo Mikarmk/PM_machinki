@@ -1,0 +1,34 @@
+<Window x:Class="CarDealership.EmployeeEditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Редактирование сотрудника" Height="400" Width="400" WindowStartupLocation="CenterScreen">
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock x:Name="titleTextBlock" Text="Редактирование сотрудника" FontSize="18" FontWeight="Bold" 
+                   HorizontalAlignment="Center" Margin="0,0,0,15"/>
+
+        <StackPanel Grid.Row="1">
+            <Label Content="ФИО:"/>
+            <TextBox x:Name="fullNameTextBox" Margin="0,0,0,10"/>
+
+            <Label Content="Должность:"/>
+            <TextBox x:Name="positionTextBox" Margin="0,0,0,10"/>
+
+            <Label Content="Телефон:"/>
+            <TextBox x:Name="phoneTextBox" Margin="0,0,0,10"/>
+
+            <Label Content="Зарплата:"/>
+            <TextBox x:Name="salaryTextBox" Margin="0,0,0,10"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,15,0,0">
+            <Button x:Name="cancelButton" Content="Отмена" Width="100" Margin="0,0,10,0" Click="cancelButton_Click"/>
+            <Button x:Name="saveButton" Content="Сохранить" Width="100" Click="saveButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window> 

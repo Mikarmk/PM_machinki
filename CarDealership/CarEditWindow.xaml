@@ -1,0 +1,46 @@
+<Window x:Class="CarDealership.CarEditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Редактирование автомобиля" Height="450" Width="400" WindowStartupLocation="CenterScreen">
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock x:Name="titleTextBlock" Text="Редактирование автомобиля" FontSize="18" FontWeight="Bold" 
+                   HorizontalAlignment="Center" Margin="0,0,0,15"/>
+
+        <StackPanel Grid.Row="1">
+            <Label Content="Марка:"/>
+            <TextBox x:Name="brandTextBox" Margin="0,0,0,10"/>
+
+            <Label Content="Модель:"/>
+            <TextBox x:Name="modelTextBox" Margin="0,0,0,10"/>
+
+            <Label Content="Год:"/>
+            <TextBox x:Name="yearTextBox" Margin="0,0,0,10"/>
+
+            <Label Content="Цвет:"/>
+            <TextBox x:Name="colorTextBox" Margin="0,0,0,10"/>
+
+            <Label Content="Цена:"/>
+            <TextBox x:Name="priceTextBox" Margin="0,0,0,10"/>
+
+            <Label Content="№ Заказа:"/>
+            <TextBox x:Name="orderNumberTextBox" Margin="0,0,0,10"/>
+
+            <Label Content="Производитель:"/>
+            <ComboBox x:Name="manufacturerComboBox" 
+                      DisplayMemberPath="Name"
+                      SelectedValuePath="Id"
+                      Margin="0,0,0,10"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,15,0,0">
+            <Button x:Name="cancelButton" Content="Отмена" Width="100" Margin="0,0,10,0" Click="cancelButton_Click"/>
+            <Button x:Name="saveButton" Content="Сохранить" Width="100" Click="saveButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window> 

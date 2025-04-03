@@ -1,0 +1,53 @@
+<Window x:Class="CarDealership.OrderEditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Редактирование заказа" Height="450" Width="400" WindowStartupLocation="CenterScreen">
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock x:Name="titleTextBlock" Text="Редактирование заказа" FontSize="18" FontWeight="Bold" 
+                   HorizontalAlignment="Center" Margin="0,0,0,15"/>
+
+        <StackPanel Grid.Row="1">
+            <Label Content="Автомобиль:"/>
+            <ComboBox x:Name="carComboBox" 
+                      DisplayMemberPath="Model"
+                      SelectedValuePath="Id"
+                      Margin="0,0,0,10"/>
+
+            <Label Content="Клиент:"/>
+            <ComboBox x:Name="clientComboBox" 
+                      DisplayMemberPath="FullName"
+                      SelectedValuePath="Id"
+                      Margin="0,0,0,10"/>
+
+            <Label Content="Сотрудник:"/>
+            <ComboBox x:Name="employeeComboBox" 
+                      DisplayMemberPath="FullName"
+                      SelectedValuePath="Id"
+                      Margin="0,0,0,10"/>
+
+            <Label Content="Дата заказа:"/>
+            <DatePicker x:Name="orderDatePicker" Margin="0,0,0,10"/>
+
+            <Label Content="Сумма:"/>
+            <TextBox x:Name="totalAmountTextBox" Margin="0,0,0,10"/>
+
+            <Label Content="Статус:"/>
+            <ComboBox x:Name="statusComboBox" Margin="0,0,0,10">
+                <ComboBoxItem Content="В обработке"/>
+                <ComboBoxItem Content="Завершен"/>
+                <ComboBoxItem Content="Отменен"/>
+            </ComboBox>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,15,0,0">
+            <Button x:Name="cancelButton" Content="Отмена" Width="100" Margin="0,0,10,0" Click="cancelButton_Click"/>
+            <Button x:Name="saveButton" Content="Сохранить" Width="100" Click="saveButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window> 
